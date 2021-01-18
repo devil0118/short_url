@@ -49,7 +49,7 @@ public class ShortUrlController {
      * @param status the error status code
      * @return the page
      */
-    @AccessLimit()
+    @AccessLimit(needLogin = false)
     @RequestMapping(value = "/error/{status}", method = RequestMethod.GET)
     public String toErrorPage(@PathVariable int status) {
         return "error/" + status;
